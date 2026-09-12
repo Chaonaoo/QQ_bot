@@ -1,6 +1,10 @@
 # QQ 群仿生机器人
 
+[![Release](https://img.shields.io/github/v/release/Chaonaoo/QQ_bot?logo=github&label=Release)](https://github.com/Chaonaoo/QQ_bot/releases/latest) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](./LICENSE) ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey) ![Go](https://img.shields.io/badge/Go-1.21%2B-00ADD8?logo=go&logoColor=white) ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white) ![NoneBot2](https://img.shields.io/badge/NoneBot2-2.x-4a90d9)
+
 一个能够模仿指定 QQ 群成员说话风格的群机器人。通过导入该成员的聊天记录，构建人物画像，并使用 LLM 以该成员的身份在群中聊天。
+
+> ⚠️ **免责声明**：本项目仅供学习与娱乐，通过导入聊天记录来模仿特定成员的说话风格。使用前请务必获得**被模仿者的知情同意**，严禁用于冒充他人身份、骚扰、诈骗或任何侵犯他人合法权益的用途。因不当使用产生的一切后果由使用者自行承担。
 
 ## 功能特性
 
