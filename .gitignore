@@ -1,0 +1,55 @@
+# ============ 敏感配置（不提交） ============
+bot/.env
+bot/.env.prod
+go-service/config.yaml
+go-service/data/
+*.zip
+
+# ============ Go ============
+go-service/*.exe
+go-service/go-service
+go-service/data/profiles/*.json
+go-service/data/learning/*.json
+
+# ============ Python ============
+bot/__pycache__/
+bot/**/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+bot/venv/
+bot/env/
+bot/.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+build/
+dist/
+
+# ============ IDE ============
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# ============ OS ============
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ============ Logs ============
+*.log
+logs/
+
+# ============ Temp ============
+tmp/
+temp/
+
+# ============ 开发调试脚本（不发布） ============
+go-service/*.py
+/test_learning.py

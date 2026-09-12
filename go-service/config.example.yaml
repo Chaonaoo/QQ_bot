@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+# LLM 配置（支持通义千问/智谱/DeepSeek，均使用 OpenAI 兼容格式）
+llm:
+  provider: "deepseek"
+  api_key: "your_api_key_here"
+  model: "deepseek-flash"   # 对应 DeepSeek-V4.1-Flash；旧名 deepseek-chat 已下线
+  base_url: "https://api.deepseek.com/v1"
+  max_tokens: 1000
+  temperature: 1.05        # 采样温度，越高越发散（建议 0~1.2）
+  top_p: 0.95              # 核采样阈值（0~1），与 temperature 配合
+  presence_penalty: 0.6    # 存在惩罚：正值减少重复（-2.0~2.0）
+  frequency_penalty: 0.3   # 频率惩罚：正值抑制复读（-2.0~2.0）
+  disable_thinking: true   # 关闭思考模式：deepseek-flash 默认开思考会拖慢回复且采样参数失效
+
+# 视觉模型配置（可选，用于图片识别）
+# 必须是支持多模态的 OpenAI 兼容接口，可选：
+#   ① 智谱 GLM-4.6V-Flash（免费、国内直连）：base_url=https://open.bigmodel.cn/api/paas/v4, model=glm-4.6v-flash
+#   ② 通义千问 Qwen-VL：base_url=https://dashscope.aliyuncs.com/compatible-mode/v1, model=qwen-vl-plus
+#   ③ deepseek-flash 本身也支持图像理解（可复用上面 llm 的 key，但仅能下载国内可访问的图 URL）
+# 填好 api_key 后把 enabled 改为 true，重启服务即可开启图片识别
+vision:
+  enabled: false
+  provider: "qwen"
+  api_key: ""
+  model: "qwen-vl-plus"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  max_tokens: 500
+  proxy: ""              # 可选：HTTP 代理（如 http://127.0.0.1:7890），访问 OpenAI 等被墙服务时需要
+  disable_thinking: false # 仅当 vision 用 deepseek-flash 等默认开思考的模型时置 true（否则 content 为空）
+
+target:
+  qq: "123456789"        # 要模仿的目标 QQ 号
+  group_id: "987654321"   # 目标群号
+
+response:
+  trigger_modes:
+    - "at"
+    - "keyword"
+    - "random"
+  trigger_keywords: []
+  random_probability: 0.3
+  reply_delay_base: 0.05
+  max_context: 10
